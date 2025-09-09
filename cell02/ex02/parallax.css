@@ -1,0 +1,51 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      font-size: small;
+    }
+
+    /* Parallax sections */
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .parallax1 {
+      background-image: url('pexels-pixabay-256559.jpg');
+    }
+
+    .parallax2 {
+      background-image: url('pexels-ralph-chang-260364-794212.jpg');
+    }
+
+    /* Black block */
+    .black-block {
+      background-color: black;
+      color: white;
+      height: 30vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    /* Optional: small overlay effect */
+    .overlay {
+      
+      padding: 20px 40px;
+      
+    }
+
+ 
