@@ -7,7 +7,7 @@
       font-size: small;
     }
 
-    /* Parallax sections */
+    
     .parallax {
       background-attachment: fixed;
       background-size: cover;
@@ -29,7 +29,7 @@
       background-image: url('pexels-ralph-chang-260364-794212.jpg');
     }
 
-    /* Black block */
+    
     .black-block {
       background-color: black;
       color: white;
@@ -41,7 +41,6 @@
       text-align: center;
     }
 
-    /* Optional: small overlay effect */
     .overlay {
       
       padding: 20px 40px;
