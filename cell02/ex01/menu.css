@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #f8f1e4, #fcebd6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu > a {
+  background: #f7c873; /* สีขนมปัง */
+  color: #8b0b27;      /* สี SNCF */
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  transition: background 0.3s;
+}
+
+.menu > a:hover {
+  background: #f4b941;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 150%;
+  left: 0;
+  min-width: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.dropdown a {
+  display: block;
+  padding: 12px 20px;
+  background: #fffef9;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dropdown a:hover {
+  background: #ffe9b5; /* สีชีส */
+}
+
+.menu:hover .dropdown {
+  display: block;
+}
+
+/* ตกแต่งเป็นชั้น ๆ ของแซนด์วิช */
+.top-bun {
+  background: #f7c873;
+  height: 15px;
+  border-radius: 50% 50% 0 0;
+}
+
+.cheese {
+  background: #f9d423;
+  height: 8px;
+}
+
+.ham {
+  background: #e88aa3;
+  height: 8px;
+}
+
+.bottom-bun {
+  background: #f7c873;
+  height: 15px;
+  border-radius: 0 0 50% 50%;
+}
