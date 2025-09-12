@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Balloon Game</title>
+  <link rel="stylesheet" href="ballon.css">
+  
+</head>
+<body>
+  <div >
+  <h1 id="sizeDisplay">Size: 200px</h1>
+  
+  <div id="balloon"></div>
+  </div>
+
+  <script>
+    const balloon = document.getElementById("balloon");
+    const sizeDisplay = document.getElementById("sizeDisplay");
+
+    let size = 200;           
+    let targetSize = 200;     
+    let colors = ["red", "green", "blue"];
+    let colorIndex = 0;
+
+    function updateBalloon() {
+      size += (targetSize - size) * 0.1; 
+      balloon.style.width = size + "px";
+      balloon.style.height = size + "px";
+      balloon.style.backgroundColor = colors[colorIndex];
+      sizeDisplay.textContent = "Size: " + Math.round(size) + "px";
+
+      requestAnimationFrame(updateBalloon);
+    }
+
+    balloon.addEventListener("click", () => {
+      targetSize += 50;  
+      colorIndex = (colorIndex + 1) % colors.length;
+      if (targetSize > 420) {
+        targetSize = 200;
+        colorIndex = 0;
+      }
+    });
+
+    balloon.addEventListener("mouseout", () => {
+      targetSize = Math.max(200, targetSize - 30); 
+      colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+    });
+
+    updateBalloon();
+  </script>
+</body>
+</html>

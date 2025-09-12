@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Balloon Game</title>
+  <link rel="stylesheet" href="ballon.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div>
+    <h1 id="sizeDisplay">Size: 200px</h1>
+    <div id="balloon"></div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      let $balloon = $("#balloon");
+      let $sizeDisplay = $("#sizeDisplay");
+
+      let size = 200;        
+      let targetSize = 200;  
+      let colors = ["red", "green", "blue"];
+      let colorIndex = 0;
+
+      function updateBalloon() {
+        size += (targetSize - size) * 0.1; 
+        $balloon.css({
+          width: size + "px",
+          height: size + "px",
+          backgroundColor: colors[colorIndex]
+        });
+        $sizeDisplay.text("Size: " + Math.round(size) + "px");
+
+        requestAnimationFrame(updateBalloon);
+      }
+
+      $balloon.on("click", function() {
+        targetSize += 50;  
+        colorIndex = (colorIndex + 1) % colors.length;
+        if (targetSize > 420) {
+          targetSize = 200;
+          colorIndex = 0;
+        }
+      });
+
+      $balloon.on("mouseout", function() {
+        targetSize = Math.max(200, targetSize - 30); 
+        colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+      });
+
+      updateBalloon();
+    });
+  </script>
+</body>
+</html>
